@@ -3,6 +3,7 @@ IAM_Words
 __pycache__/
 *.py[cod]
 *$py.class
+myenv
 
 # C extensions
 *.so
