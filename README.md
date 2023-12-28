@@ -3,13 +3,13 @@ Machine learning project for recognizing handwritten texts
 
 Instructions:
 Must need python 3.10 version.
-I repeat!!! Must need python 3.10
 
 Prerequisites:
-    You must have CUDA version 11.2 and cudNNN library version 8.1
+    Must have CUDA version 11.2 and cudNNN library version 8.1
 
 Dataset:
     Move IAM_Words into project directory
+    link: https://git.io/J0fjL
 
 Setup Instructions:
 1. Setup virtual environment:
