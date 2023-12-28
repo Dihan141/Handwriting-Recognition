@@ -33,8 +33,6 @@ The Handwriting Recognition model is built using TensorFlow and Keras. It consis
     inferenceModel.py: Implements a class for using the trained model for inference on new images.
 
     model.py: Defines the architecture of the handwriting recognition model using residual blocks and bidirectional LSTM layers.
-
-    SpellChecking.py: Implements a spell checker using the spellchecker library, providing suggestions for word corrections.
     
     Canvas.py: Defines the GUI using the Tkinter library. Users can draw on a canvas, submit drawings for recognition, and receive predictions with suggested corrections.
 
