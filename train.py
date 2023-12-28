@@ -123,6 +123,14 @@ tb_callback = TensorBoard(f"{configs.model_path}/logs", update_freq=1)
 reduceLROnPlat = ReduceLROnPlateau(monitor="val_CER", factor=0.9, min_delta=1e-10, patience=10, verbose=1, mode="auto")
 model2onnx = Model2onnx(f"{configs.model_path}/model.h5")
 
+train_data_provider.augmentors = [
+    RandomBrightness(), 
+    RandomErodeDilate(),
+    RandomSharpen(),
+    RandomRotate(angle=10), 
+    ]
+
+
 # Train the model
 model.fit(
     train_data_provider,
