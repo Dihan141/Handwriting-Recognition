@@ -111,24 +111,17 @@ model = train_model(
 model.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=configs.learning_rate),
     loss=CTCloss(),
-    metrics=[CWERMetric(padding_token=len(configs.vocab))],
+    metrics=[CWERMetric(padding_token=len(configs.vocab))],         # messures CER and WER
 )
 model.summary(line_length=110)
 
 # Define callbacks
-earlystopper = EarlyStopping(monitor="val_CER", patience=20, verbose=1)
+earlystopper = EarlyStopping(monitor="val_CER", patience=20, verbose=1)         # if error rate does not change for a particular amount of iterations
 checkpoint = ModelCheckpoint(f"{configs.model_path}/model.h5", monitor="val_CER", verbose=1, save_best_only=True, mode="min")
 trainLogger = TrainLogger(configs.model_path)
 tb_callback = TensorBoard(f"{configs.model_path}/logs", update_freq=1)
-reduceLROnPlat = ReduceLROnPlateau(monitor="val_CER", factor=0.9, min_delta=1e-10, patience=10, verbose=1, mode="auto")
-model2onnx = Model2onnx(f"{configs.model_path}/model.h5")
-
-train_data_provider.augmentors = [
-    RandomBrightness(), 
-    RandomErodeDilate(),
-    RandomSharpen(),
-    RandomRotate(angle=10), 
-    ]
+reduceLROnPlat = ReduceLROnPlateau(monitor="val_CER", factor=0.9, min_delta=1e-10, patience=10, verbose=1, mode="auto")     # If val_CER doesn't change for a particular amount of iterations
+model2onnx = Model2onnx(f"{configs.model_path}/model.h5")       # For universal use
 
 
 # Train the model

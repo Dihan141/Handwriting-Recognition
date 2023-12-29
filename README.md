@@ -2,8 +2,7 @@
 Machine learning project for recognizing handwritten texts
 
 Instructions:
-Must need python 3.10 version.
-I repeat!!! Must need python 3.10
+Must need python 3.10.0 version.
 
 Prerequisites:
     You must have CUDA version 11.2 and cudNNN library version 8.1

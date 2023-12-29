@@ -17,13 +17,9 @@ class ImageToWordModel(OnnxInferenceModel):
         image = cv2.resize(image, self.input_shape[:2][::-1])
         
         # image = image.astype(np.float32) / 255.0
-
         image_pred = np.expand_dims(image, axis=0).astype(np.float32)
-
         preds = self.model.run(None, {self.input_name: image_pred})[0]
-
         text = ctc_decoder(preds, self.char_list)[0]
-
         return text
 
 
