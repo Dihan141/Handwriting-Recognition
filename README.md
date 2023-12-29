@@ -5,10 +5,11 @@ Instructions:
 Must need python 3.10.0 version.
 
 Prerequisites:
-    You must have CUDA version 11.2 and cudNNN library version 8.1
+    Must have CUDA version 11.2 and cudNNN library version 8.1
 
 Dataset:
     Move IAM_Words into project directory
+    link: https://git.io/J0fjL
 
 Setup Instructions:
 1. Setup virtual environment:
@@ -32,8 +33,6 @@ The Handwriting Recognition model is built using TensorFlow and Keras. It consis
     inferenceModel.py: Implements a class for using the trained model for inference on new images.
 
     model.py: Defines the architecture of the handwriting recognition model using residual blocks and bidirectional LSTM layers.
-
-    SpellChecking.py: Implements a spell checker using the spellchecker library, providing suggestions for word corrections.
     
     Canvas.py: Defines the GUI using the Tkinter library. Users can draw on a canvas, submit drawings for recognition, and receive predictions with suggested corrections.
 
