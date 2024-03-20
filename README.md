@@ -1,5 +1,7 @@
 # Handwriting-Recognition
-Machine learning project for recognizing handwritten texts
+Handwriting Recognition (HWR) is the ability of computers to receive and interpret handwritten inputs. The inputs might be scanned from paper documents, images, etc. or sensed from the movement of pens on a special digitizer, for example.
+This is a Machine learning project for recognizing handwritten texts. The Handwriting Recognition model is built using TensorFlow and Keras. It consists of several components for data processing, model training, and inference.
+
 
 Instructions:
 Must need python 3.10.0 version.
